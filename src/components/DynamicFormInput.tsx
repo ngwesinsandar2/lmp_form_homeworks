@@ -81,7 +81,7 @@ const DynamicFormInput = ({ formData, setPostData }: { formData: LMPFormInterfac
         <div className="mb-8">
           <label htmlFor="city" className="block mb-2">{formData.formName}</label>
           <select name="city" id="city" onChange={(e) => handleChange(e, "city")} required={formData.isRequired}>
-          <option value="" disabled>{formData.placeholder}</option>
+          <option value="" disabled selected>{formData.placeholder}</option>
             {
               formData.options.map(option => {
                 return (
@@ -105,7 +105,7 @@ const DynamicFormInput = ({ formData, setPostData }: { formData: LMPFormInterfac
         formData.type === "textarea" ?
         <div className="mb-8">
           <label htmlFor="note" className="block mb-2">{formData.formName}</label>
-          <textarea name="note" id="" cols="30" rows="10" required={formData.isRequired} onChange={(e) => handleChange(e, "note")}></textarea>
+          <textarea name="note" id="note" placeholder={formData.placeholder} cols={30} rows={10} required={formData.isRequired} onChange={(e) => handleChange(e, "note")}></textarea>
         </div> : ""
       }
 
