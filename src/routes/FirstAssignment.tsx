@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import DynamicFormInput from "../components/DynamicFormInput";
 import dbForm from "../my_db.json";
-import { MyPostFormInterface } from "../types/PostFormInterface";
+import { LMPPostFormInterface, MyPostFormInterface } from "../types/PostFormInterface";
 
 function FirstAssignment() {
-  const [postData, setPostData] = useState<MyPostFormInterface>({
+  const [postData, setPostData] = useState<LMPPostFormInterface | MyPostFormInterface>({
     name: "",
     email: "",
     note: "",
   })
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(postData)
   }
